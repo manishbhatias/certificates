@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/manishbhatias/certificate-sender/issues"
   },
-  "homepage": "https://github.com/manishbhatias/certificate-sender#readme"
+  "homepage": "https://github.com/manishbhatias/certificate-sender#readme",
+  "dependencies": {
+    "gm": "^1.23.0"
+  }
 }
