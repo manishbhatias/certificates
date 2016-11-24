@@ -3,17 +3,22 @@
   "version": "0.0.0",
   "description": "Create and send personalized e-certificates in bulk",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": {
+    "cert": "commands/cert.js",
+    "cert-opts": "commands/opts.js",
+    "cert-recipients": "commands/recipients.js",
+    "cert-send": "commands/send.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/manishbhatias/certificate-sender.git"
   },
   "keywords": [
-    "certificate",
+    "bulk certificate",
+    "mass certificate",
     "ses",
-    "email"
+    "email",
+    "pdf"
   ],
   "author": "Manish Bhatia <manishbhatias@gmail.com>",
   "license": "MIT",
@@ -22,6 +27,16 @@
   },
   "homepage": "https://github.com/manishbhatias/certificate-sender#readme",
   "dependencies": {
-    "gm": "^1.23.0"
+    "aws-sdk": "^2.6.7",
+    "chalk": "^1.1.3",
+    "cli-table2": "^0.2.0",
+    "commander": "^2.9.0",
+    "csv-parse": "^1.1.7",
+    "figlet": "^1.2.0",
+    "gm": "^1.23.0",
+    "level": "^1.5.0",
+    "level-jobs": "^0.6",
+    "nodemailer": "^2.6.4",
+    "nodemailer-ses-transport": "^1.4.0"
   }
 }

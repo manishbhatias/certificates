@@ -1,4 +1,5 @@
 const config = {
+    'db': 'db',
     'certificate': {
         'template': './assets/certificate.jpg',
         'font': {
@@ -22,10 +23,15 @@ const config = {
         ]
 
     },
-    'aws': {
-        'accessKey': '',
-        'accessSecret': '',
-        'region': ''
+    'email': {
+        'from': '"Team Bhumi" <contact@bhumi.ngo>',
+        'subject': 'Test Subject',
+        'body': './assets/email.txt',
+        'aws': {
+            'region': 'us-east-1',
+            'accessKeyId': 'AKIAIJZHLX6NQFBCN25A',
+            'secretAccessKey': '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'
+        }
     }
 };
 
