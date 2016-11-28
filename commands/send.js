@@ -7,7 +7,7 @@ const sendCertificate = require('../lib/send-certificate')(config);
 const db = require('level')(config.db);
 const queue = require('level-jobs')(db, sendCertificate, {
     maxConcurrency: 5,
-    maxRetries: 2
+    maxRetries: 1
 });
 
 queue.on('drain', function () {

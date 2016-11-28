@@ -58,7 +58,7 @@ program
 
         csvparser.on('readable', function () {
             while (record = csvparser.read()) {
-                if (record.email) {
+                if (record.email && record.name) {
                     client.push(record)
                     count++;
                 } else {

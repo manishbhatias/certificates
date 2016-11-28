@@ -24,13 +24,16 @@ const config = {
 
     },
     'email': {
-        'from': '"Team Bhumi" <contact@bhumi.ngo>',
-        'subject': 'Test Subject',
+        'from': {
+            'name': '',
+            'email': ''
+        },
+        'subject': '',
         'body': './assets/email.txt',
         'aws': {
-            'region': 'us-east-1',
-            'accessKeyId': 'AKIAIJZHLX6NQFBCN25A',
-            'secretAccessKey': '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'
+            'region': 'us-west-2',
+            'accessKeyId': '',
+            'secretAccessKey': ''
         }
     }
 };
