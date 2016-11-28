@@ -1,8 +1,8 @@
 {
-  "name": "certificate-sender",
-  "version": "0.0.0",
+  "name": "certificates",
+  "version": "0.0.1",
   "description": "Create and send personalized e-certificates in bulk",
-  "main": "index.js",
+  "main": "lib/send-certificate.js",
   "bin": {
     "cert": "commands/cert.js",
     "cert-opts": "commands/opts.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manishbhatias/certificate-sender.git"
+    "url": "git+https://github.com/manishbhatias/certificates.git"
   },
   "keywords": [
     "bulk certificate",
@@ -21,11 +21,11 @@
     "pdf"
   ],
   "author": "Manish Bhatia <manishbhatias@gmail.com>",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
-    "url": "https://github.com/manishbhatias/certificate-sender/issues"
+    "url": "https://github.com/manishbhatias/certificates/issues"
   },
-  "homepage": "https://github.com/manishbhatias/certificate-sender#readme",
+  "homepage": "https://github.com/manishbhatias/certificates#readme",
   "dependencies": {
     "aws-sdk": "^2.6.7",
     "chalk": "^1.1.3",
