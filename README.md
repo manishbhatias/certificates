@@ -1,4 +1,4 @@
-# certificate-sender
+# certificates
 Create and send personalized e-certificates in bulk using Graphicsmagick and AWS
 
 ## External Dependencies
@@ -34,4 +34,4 @@ TODO
 
 ## License
 
-See LICENSE
+See [LICENSE.md](LICENSE.md)
