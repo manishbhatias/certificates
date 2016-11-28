@@ -1,4 +1,5 @@
-# certificates
+# certificates [![NPM Version](https://img.shields.io/npm/v/certificates.svg?style=flat)](https://www.npmjs.org/package/certificates)
+
 Create and send personalized e-certificates in bulk using Graphicsmagick and AWS
 
 ## External Dependencies
@@ -7,9 +8,20 @@ Create and send personalized e-certificates in bulk using Graphicsmagick and AWS
 
 ## Installation
 
-TODO
+First download and install [GraphicsMagick](http://www.graphicsmagick.org/). In Mac OS X, you can simply use [Homebrew](http://mxcl.github.io/homebrew/) and do:
 
-## Usage
+    brew install imagemagick
+    brew install graphicsmagick
+
+If you want WebP support with ImageMagick, you must add the WebP option:
+
+    brew install imagemagick --with-webp
+
+then use npm:
+
+    npm install certificates -g
+
+## Basic Usage
 
 - First, configure the program
 ```
