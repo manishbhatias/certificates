@@ -9,7 +9,7 @@ const chalk = require('chalk');
 const program = require('commander');
 const Table = require('cli-table2');
 
-const db = require('level')(config.db);
+const db = require('../lib/db')(config.db);
 const client = require('level-jobs/client')(db);
 
 program

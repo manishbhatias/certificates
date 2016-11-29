@@ -1,18 +1,18 @@
 #!/usr/bin/env node --harmony
 
+const os = require('os');
 const chalk = require('chalk');
 const config = require('../config');
 const sendCertificate = require('../lib/send-certificate')(config);
 
-const db = require('level')(config.db);
+const db = require('../lib/db')(config.db);
 const queue = require('level-jobs')(db, sendCertificate, {
-    maxConcurrency: 5,
+    maxConcurrency: os.cpus().length,
     maxRetries: 1
 });
 
 queue.on('drain', function () {
-    console.log(chalk.bold('Certificates have been sent!'));
-    process.exit(0);
+    console.log(chalk.bold('All Certificates have been sent!'));
 })
 
 queue.on('error', function (err) {

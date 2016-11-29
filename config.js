@@ -1,4 +1,6 @@
-const config = {
+const Preferences = require("preferences");
+
+const config = new Preferences('com.manishbhatias.certificates', {
     'db': 'db',
     'certificate': {
         'template': './assets/certificate.jpg',
@@ -29,13 +31,13 @@ const config = {
             'email': ''
         },
         'subject': '',
-        'body': './assets/email.txt',
+        'body': '',
         'aws': {
-            'region': 'us-west-2',
+            'region': '',
             'accessKeyId': '',
             'secretAccessKey': ''
         }
     }
-};
+});
 
 module.exports = config;
