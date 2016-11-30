@@ -1,4 +1,4 @@
-#!/usr/bin/env node --harmony
+#!/usr/bin/env node
 
 const os = require('os');
 const chalk = require('chalk');

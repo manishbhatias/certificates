@@ -1,4 +1,4 @@
-#!/usr/bin/env node --harmony
+#!/usr/bin/env node
 
 const config = require('../config');
 const objectPath = require('object-path');

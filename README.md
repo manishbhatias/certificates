@@ -4,14 +4,13 @@ Create and send personalized e-certificates in bulk using Graphicsmagick and AWS
 
 ## External Dependencies
 
-1. Graphicsmagick
+1. ImageMagick
 
 ## Installation
 
-First download and install [GraphicsMagick](http://www.graphicsmagick.org/). In Mac OS X, you can simply use [Homebrew](http://mxcl.github.io/homebrew/) and do:
+First download and install [ImageMagick](https://www.imagemagick.org/script/binary-releases.php). In Mac OS X, you can simply use [Homebrew](http://mxcl.github.io/homebrew/) and do:
 
     brew install imagemagick
-    brew install graphicsmagick
 
 If you want WebP support with ImageMagick, you must add the WebP option:
 
