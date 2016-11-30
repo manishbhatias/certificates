@@ -3,10 +3,10 @@ const Preferences = require("preferences");
 const config = new Preferences('com.manishbhatias.certificates', {
     'db': 'db',
     'certificate': {
-        'template': './assets/certificate.jpg',
+        'template': __dirname + '/assets/certificate.jpg',
         'font': {
             'color': '#000',
-            'face': './assets/Pacifico.ttf',
+            'face': __dirname + '/assets/Pacifico.ttf',
             'size': '80'
         },
         'mergeVars': [

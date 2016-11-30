@@ -11,10 +11,6 @@ const queue = require('level-jobs')(db, sendCertificate, {
     maxRetries: 1
 });
 
-queue.on('drain', function () {
-    console.log(chalk.bold('All Certificates have been sent!'));
-})
-
 queue.on('error', function (err) {
     console.log(chalk.red('Error: %s'), err.message);
 })

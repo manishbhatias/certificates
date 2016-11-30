@@ -25,7 +25,7 @@ var requiredConfig = [
         when: true
     },
     {
-        type: 'choices',
+        type: 'list',
         name: 'email.aws.region',
         message: 'AWS Region',
         default: config.email.aws.region,
