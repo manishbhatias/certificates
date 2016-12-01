@@ -31,6 +31,7 @@ const config = new Preferences('com.manishbhatias.certificates', {
             'name': '',
             'email': ''
         },
+        'bcc': '',
         'subject': '',
         'body': '',
         'aws': {

@@ -67,6 +67,25 @@ var requiredConfig = [
     },
     {
         type: 'input',
+        name: 'email.bcc',
+        message: 'Email BCC',
+        default: config.email.bcc,
+        validate: function (email) {
+            console.log(JSON.stringify(email));
+            const EMAIL_REGEX = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
+            if (typeof email === 'string' && email.length > 5 && email.length < 61 && EMAIL_REGEX.test(email)) {
+                return true;
+            } else {
+                return 'Please enter a valid email address';
+            }
+        },
+        filter: function (val) {
+            return String.prototype.toLowerCase.call(val);
+        },
+        when: true
+    },
+    {
+        type: 'input',
         name: 'email.subject',
         message: 'Email Subject',
         default: config.email.subject,
