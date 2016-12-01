@@ -7,6 +7,7 @@ const config = new Preferences('com.manishbhatias.certificates', {
         'font': {
             'color': '#000',
             'face': __dirname + '/assets/Pacifico.ttf',
+            'color': '#000000',
             'size': '80'
         },
         'mergeVars': [

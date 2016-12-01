@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+const fs = require('fs');
+const path = require("path");
 const config = require('../config');
 const objectPath = require('object-path');
 const chalk = require('chalk');
@@ -82,6 +84,50 @@ var requiredConfig = [
             } catch (e) {
                 return e.message;
             }
+        },
+        when: true
+    },
+    {
+        type: 'list',
+        name: 'certificate.font.face',
+        message: 'Font Face',
+        default: config.certificate.font.face,
+        choices: function (answers) {
+            let done = this.async();
+            let fonts = [];
+            let dir = path.resolve(__dirname + '/../assets/');
+            fs.readdir(dir, function (err, files) {
+                if (err)
+                    return done(err, fonts);
+                fonts = files.map(function (file) {
+                    return path.join(dir, file);
+                }).filter(function (file) {
+                    return path.extname(file) === '.ttf';
+                }).map(function (file) {
+                    return {
+                        name: path.basename(file, '.ttf'),
+                        value: path.extname(file)
+                    };
+                });
+                done(null, fonts);
+            });
+        },
+        when: true
+    },
+    {
+        type: 'input',
+        name: 'certificate.font.size',
+        message: 'Font Size',
+        default: config.certificate.font.size,
+        when: true
+    },
+    {
+        type: 'input',
+        name: 'certificate.font.color',
+        message: 'Font Color (Hex)',
+        default: config.certificate.font.color,
+        validate: function (color) {
+            return /^#[0-9A-F]{6}$/i.test(color) === true;
         },
         when: true
     }
