@@ -29,7 +29,10 @@ program
             if (i == 0) {
                 table.options.head = Object.keys(d);
             }
-            table.push(Object.values(d));
+            let values = Object.keys(d).map(function (key) {
+                return d[key];
+            });
+            table.push(values);
             i++;
         });
         stream.on('end', function () {

@@ -5,9 +5,9 @@
   "main": "lib/send-certificate.js",
   "bin": {
     "cert": "commands/cert.js",
-    "cert-opts": "commands/opts.js",
-    "cert-recipients": "commands/recipients.js",
-    "cert-send": "commands/send.js"
+    "cert-opts": "commands/cert-opts.js",
+    "cert-recipients": "commands/cert-recipients.js",
+    "cert-send": "commands/cert-send.js"
   },
   "repository": {
     "type": "git",
