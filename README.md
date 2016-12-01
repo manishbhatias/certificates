@@ -31,6 +31,14 @@ then use npm:
     $ cert send
 ```
 
+## Todo
+
+The goal is to have a program which can be installed easily and has a web based GUI, where anyone can 
+
+- select an email provider (Gmail, AWS, Mandrill etc..)
+- upload the certificate image, mark some areas to customize, add fields
+- import a CSV file with the field values and let the program generate and send personalized certificates
+
 ## Contributing
 
 1. Fork it!
