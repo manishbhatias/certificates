@@ -106,7 +106,7 @@ var requiredConfig = [
                 }).map(function (file) {
                     return {
                         name: path.basename(file, '.ttf'),
-                        value: path.extname(file)
+                        value: file
                     };
                 });
                 done(null, fonts);
@@ -137,4 +137,5 @@ inquirer.prompt(requiredConfig).then(function (answers) {
     Object.keys(answers).forEach(function (k) {
         objectPath.set(config, k, answers[k]);
     });
+    console.log('Saved Configuration');
 });
