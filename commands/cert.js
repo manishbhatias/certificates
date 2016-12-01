@@ -3,6 +3,7 @@
 const chalk = require('chalk');
 const figlet = require('figlet');
 const program = require('commander');
+const packageData = require('../package.json');
 
 console.log(
     chalk.yellow(
@@ -23,8 +24,8 @@ program.on('--help', function () {
 });
 
 program
-    .version('0.0.1')
-    .description('Send personalized certificates to multiple people')
+    .version(packageData.version)
+    .description('Send personalized certificates in bulk')
     .command('opts', 'Change certificate generation and mailing options interactively')
     .command('recipients', 'Manage recipients to send certificates to')
     .command('send', 'Send certificates')
