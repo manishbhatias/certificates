@@ -14,13 +14,13 @@ const config = new Preferences('com.manishbhatias.certificates', {
             {
                 'key': 'name',
                 'box': {
-                    left: 892, top: 688, width: 1440, height: 120
+                    left: 880, top: 716, width: 1460, height: 120
                 }
             },
             {
                 'key': 'event',
                 'box': {
-                    left: 600, top: 830, width: 2275, height: 120
+                    left: 560, top: 830, width: 2328, height: 120
                 },
             }
         ]
