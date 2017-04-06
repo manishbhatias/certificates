@@ -1,27 +1,38 @@
 const Preferences = require("preferences");
 
-const config = new Preferences('com.manishbhatias.certificates', {
+const config = new Preferences('org.manishbhatias.certificates', {
     'db': 'db',
     'certificate': {
         'template': __dirname + '/assets/certificate.jpg',
         'font': {
-            'color': '#000',
-            'face': __dirname + '/assets/Pacifico.ttf',
-            'color': '#000000',
-            'size': '80'
+            'face': __dirname + '/assets/lucida_calligraphy_italic.ttf',
+            'color': '#927c57',
+            'size': '36'
         },
         'mergeVars': [
             {
                 'key': 'name',
                 'box': {
-                    left: 880, top: 716, width: 1460, height: 120
+                    left: 170, top: 400, width: 505, height: 40
                 }
             },
             {
-                'key': 'event',
+                'key': 'bib',
                 'box': {
-                    left: 560, top: 830, width: 2328, height: 120
-                },
+                    left: 770, top: 400, width: 120, height: 40
+                }
+            },
+            {
+                'key': 'run',
+                'box': {
+                    left: 640, top: 460, width: 100, height: 40
+                }
+            },
+            {
+                'key': 'time',
+                'box': {
+                    left: 350, top: 520, width: 310, height: 40
+                }
             }
         ]
 
