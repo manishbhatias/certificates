@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require("path");
 const config = require('../config');
-const objectPath = require('object-path');
+const _merge = require('lodash.merge');
 const chalk = require('chalk');
 const inquirer = require('inquirer');
 
@@ -105,6 +105,16 @@ var requiredConfig = [
         when: true
     },
     {
+        type: 'input',
+        name: 'certificate.template',
+        message: 'Certificate Template',
+        default: config.certificate.template,
+        validate: function (template) {
+            return fs.existsSync(template) === true;
+        },
+        when: true
+    },
+    {
         type: 'list',
         name: 'certificate.font.face',
         message: 'Font Face',
@@ -151,8 +161,6 @@ var requiredConfig = [
 ];
 
 inquirer.prompt(requiredConfig).then(function (answers) {
-    Object.keys(answers).forEach(function (k) {
-        objectPath.set(config, k, answers[k]);
-    });
+    _merge(config, answers);
     console.log('Saved Configuration');
 });

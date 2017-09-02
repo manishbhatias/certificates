@@ -1,6 +1,6 @@
 const Preferences = require("preferences");
 
-const config = new Preferences('org.manishbhatias.certificates', {
+const defaultConfig = {
     'db': 'db',
     'certificate': {
         'template': __dirname + '/assets/certificate.jpg',
@@ -13,29 +13,28 @@ const config = new Preferences('org.manishbhatias.certificates', {
             {
                 'key': 'name',
                 'box': {
-                    left: 170, top: 400, width: 505, height: 40
+                    left: 174, top: 412, width: 495, height: 40
                 }
             },
             {
                 'key': 'bib',
                 'box': {
-                    left: 770, top: 400, width: 120, height: 40
+                    left: 775, top: 412, width: 110, height: 40
                 }
             },
             {
                 'key': 'run',
                 'box': {
-                    left: 640, top: 460, width: 100, height: 40
+                    left: 642, top: 470, width: 90, height: 40
                 }
             },
             {
                 'key': 'time',
                 'box': {
-                    left: 350, top: 520, width: 310, height: 40
+                    left: 310, top: 530, width: 280, height: 40
                 }
             }
         ]
-
     },
     'email': {
         'from': {
@@ -51,6 +50,6 @@ const config = new Preferences('org.manishbhatias.certificates', {
             'secretAccessKey': ''
         }
     }
-});
+};
 
-module.exports = config;
+module.exports = new Preferences('com.manishbhatias.certificates', defaultConfig);
