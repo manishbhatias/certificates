@@ -7,7 +7,7 @@ const config = require('../config');
 
 const chalk = require('chalk');
 const program = require('commander');
-const Table = require('cli-table2');
+const Table = require('cli-table3');
 
 const db = require('../lib/db')(config.db);
 const client = require('level-jobs/client')(db);
