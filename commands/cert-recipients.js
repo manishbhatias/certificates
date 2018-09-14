@@ -19,18 +19,19 @@ program
     .action(function (cmd) {
         let limit = parseInt(cmd.limit, 10) || 10;
         let table = new Table();
-        let stream = client.readStream({
+        let stream = client._work.createReadStream({
             keys: false,
             values: true,
             limit: limit
         });
         let i = 0;
         stream.on('data', function (d) {
+            let value = JSON.parse(d);
             if (i == 0) {
-                table.options.head = Object.keys(d);
+                table.options.head = Object.keys(value);
             }
-            let values = Object.keys(d).map(function (key) {
-                return d[key];
+            let values = table.options.head.map(function (key) {
+                return value[key];
             });
             table.push(values);
             i++;
@@ -62,7 +63,7 @@ program
         csvparser.on('readable', function () {
             while (record = csvparser.read()) {
                 if (record.email && record.name) {
-                    client.push(record)
+                    client.push(record);
                     count++;
                 } else {
                     console.log('Email is required!');
@@ -74,7 +75,7 @@ program
             console.log(err.message);
         });
 
-        csvparser.on('finish', function () {
+        csvparser.on('end', function () {
             console.log('%s records processed', count);
         });
         let input = fs.createReadStream(file);
@@ -84,7 +85,7 @@ program
     .command('reset')
     .description('Reset the current list of recipients')
     .action(function (cmd, args) {
-        let stream = client.readStream({
+        let stream = client._work.createReadStream({
             keys: true,
             values: false
         });

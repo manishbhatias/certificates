@@ -18,7 +18,3 @@ queue.on('error', function (err) {
 queue.on('retry', function (err) {
     console.log(chalk.yellow('Retrying: %s'), err.message);
 })
-
-queue.on('drain', function () {
-    console.log(chalk.yellow('All recipients have been queued for processing!'));
-})

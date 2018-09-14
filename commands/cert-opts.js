@@ -4,27 +4,44 @@ const fs = require('fs');
 const path = require("path");
 const config = require('../config');
 const _merge = require('lodash.merge');
-const chalk = require('chalk');
 const inquirer = require('inquirer');
 
 const Handlebars = require('handlebars');
 
-// Email configuration
-// TODO certificate configuration
+// TODO Email configuration
+// TODO Certificate configuration
 var requiredConfig = [
+    {
+        type: 'list',
+        name: 'email.transport',
+        message: 'Email Provider',
+        default: config.email.transport,
+        choices: [
+            {name: 'Amazon Simple Email Service', value: 'aws'},
+            {name: 'Postmark', value: 'postmark'}
+        ],
+        when: true
+    },
+    {
+        type: 'input',
+        name: 'email.postmark.apiKey',
+        message: 'Postmark API Key',
+        default: config.email.postmark.apiKey,
+        when: answers => answers.email.transport === 'postmark'
+    },
     {
         type: 'input',
         name: 'email.aws.accessKeyId',
         message: 'AWS Access Key',
         default: config.email.aws.accessKeyId,
-        when: true
+        when: answers => answers.email.transport === 'aws'
     },
     {
         type: 'password',
         name: 'email.aws.secretAccessKey',
         message: 'AWS Secret Access Key',
         default: config.email.aws.secretAccessKey,
-        when: true
+        when: answers => answers.email.transport === 'aws'
     },
     {
         type: 'list',
@@ -36,7 +53,7 @@ var requiredConfig = [
             {name: 'US West (Oregon)', value: 'us-west-2'},
             {name: 'EU (Ireland)', value: 'eu-west-1'}
         ],
-        when: true
+        when: answers => answers.email.transport === 'aws'
     }, {
         type: 'input',
         name: 'email.from.name',
@@ -90,6 +107,17 @@ var requiredConfig = [
         when: true
     },
     {
+        type: 'list',
+        name: 'email.type',
+        message: 'Email Type',
+        default: config.email.type,
+        choices: [
+            {name: 'PlainText', value: 'text'},
+            {name: 'HTML', value: 'html'}
+        ],
+        when: true
+    },
+    {
         type: 'editor',
         name: 'email.body',
         message: 'Email Body',
@@ -119,7 +147,7 @@ var requiredConfig = [
         name: 'certificate.font.face',
         message: 'Font Face',
         default: config.certificate.font.face,
-        choices: function (answers) {
+        choices: function () {
             let done = this.async();
             let fonts = [];
             let dir = path.resolve(__dirname + '/../assets/');

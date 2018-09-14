@@ -1,6 +1,6 @@
 {
   "name": "certificates",
-  "version": "0.11.0",
+  "version": "1.0.0",
   "description": "Create and send personalized e-certificates in bulk",
   "main": "lib/send-certificate.js",
   "bin": {
@@ -40,6 +40,7 @@
     "level-jobs": "^2.0",
     "lodash.merge": "^4.6.1",
     "nodemailer": "^4.6.8",
+    "nodemailer-postmark-transport": "^1.4.0",
     "nodemailer-ses-transport": "^1.4.0",
     "preferences": "^0.2.1"
   }

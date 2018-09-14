@@ -13,44 +13,30 @@ const defaultConfig = {
             {
                 'key': 'name',
                 'box': {
-                    left: 1790, top: 875, width: 1570, height: 120
-                }
-            },
-            {
-                'key': 'activity',
-                'box': {
-                    left: 2030, top: 1080, width: 1320, height: 120
+                    left: 1830, top: 1500, width: 1300, height: 110
                 }
             }
         ]
     },
     'email': {
+        'type': 'text',
         'from': {
             'name': '',
             'email': ''
         },
         'bcc': '',
         'subject': '',
-        'body': `Dear {{name}},
-
-Thank you for being a part of Bhumi's activities this year.
-
-Please find attached your certificate, as a token of our recognition.
-
-In alignment with Bhumi's values of being eco-conscious (http://www.bhumi.ngo/about/), we are sending you an e-copy of the certificate. We request you to print the same only if essential. It is recommended that A4 size paper of 250/300 GSM thickness is used for printing.
-
-To volunteer regularly with Bhumi it is essential to register at http://www.bhumi.ngo/volunteer and attend an orientation programme (if you already haven't).
-
-We look forward to you changing today with you!
-
-Niveditha
-Bhumi Team`,
+        'body': ``,
+        'transport': 'aws',
         'aws': {
             'region': 'us-west-2',
             'accessKeyId': '',
             'secretAccessKey': ''
+        },
+        'postmark': {
+            'apiKey': ''
         }
     }
 };
 
-module.exports = new Preferences('org.bhumi.certificates', defaultConfig);
+module.exports = new Preferences('org.certificates', defaultConfig);
