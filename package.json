@@ -1,6 +1,6 @@
 {
   "name": "certificates",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Create and send personalized e-certificates in bulk",
   "main": "lib/send-certificate.js",
   "bin": {
