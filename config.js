@@ -39,4 +39,7 @@ const defaultConfig = {
     }
 };
 
-module.exports = new Preferences('org.certificates', defaultConfig);
+module.exports = new Preferences('org.certificates', defaultConfig, {
+    encrypt: false,
+    format: 'json'
+});
