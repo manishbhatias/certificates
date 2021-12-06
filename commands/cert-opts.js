@@ -185,6 +185,18 @@ var requiredConfig = [
             return /^#[0-9A-F]{6}$/i.test(color) === true;
         },
         when: true
+    },
+    {
+        type: 'input',
+        name: 'certificate.font.gravity',
+        message: 'Font Alignment',
+        default: 'center',
+        choices: [
+            {name: 'Left', value: 'west'},
+            {name: 'Center', value: 'center'},
+            {name: 'Right', value: 'east'}
+        ],
+        when: true
     }
 ];
 
