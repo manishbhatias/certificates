@@ -66,7 +66,7 @@ program
                     client.push(record);
                     count++;
                 } else {
-                    console.log('Email is required!');
+                    console.log('Name & Email are required!');
                 }
             }
         });
